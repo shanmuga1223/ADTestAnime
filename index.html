@@ -3,21 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Chibi Princess  Anime DressUp</title>
+    <title>Unity WebGL Player | Desi Dress Up Make Up Stylist</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="jiogames_sp_wrapper.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=400 height=640 tabindex="-1"></canvas>
+      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
-    </div>
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -52,15 +51,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/CrosspromotionBuildAnime.loader.js";
+      var loaderUrl = buildUrl + "/Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/CrosspromotionBuildAnime.data.unityweb",
-        frameworkUrl: buildUrl + "/CrosspromotionBuildAnime.framework.js.unityweb",
-        codeUrl: buildUrl + "/CrosspromotionBuildAnime.wasm.unityweb",
+        dataUrl: buildUrl + "/Build.data",
+        frameworkUrl: buildUrl + "/Build.framework.js",
+        codeUrl: buildUrl + "/Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "pixcellplay",
-        productName: "Chibi Princess  Anime DressUp",
-        productVersion: "0.5",
+        productName: "Desi Dress Up Make Up Stylist",
+        productVersion: "4.0",
         showBanner: unityShowBanner,
       };
 
@@ -89,12 +88,13 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "400px";
-        canvas.style.height = "640px";
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
       }
 
       loadingBar.style.display = "block";
-
+      
+      var unityGameInstance = null;
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -102,6 +102,10 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
+                unityGameInstance = unityInstance;
+                //fullscreenButton.onclick = () => {
+                  //unityInstance.SetFullscreen(1);
+                //};
               }).catch((message) => {
                 alert(message);
               });
