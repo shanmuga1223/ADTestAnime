@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "139586027113",
+    "firebase_url": "https://doll-dressup-game-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "doll-dressup-game",
+    "storage_bucket": "doll-dressup-game.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:139586027113:android:0db56ac399c7d6de6cecf8",
+        "android_client_info": {
+          "package_name": "com.pixcellplay.ddg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADlvP4iC6SN14zL2XxWlH_F5_TsScgKMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
